@@ -1,11 +1,8 @@
 import styled from 'styled-components'
 
-const Cabecalho = styled.header`
+export const Cabecalho = styled.header`
+  background-color: var(--cor-secundaria);
   color: var(--cor-principal);
-  padding: 10px;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
+  text-align: center;
+  padding: 24px 0;
 `
-
-export default Cabecalho

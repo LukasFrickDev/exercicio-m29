@@ -1,58 +1,4 @@
-import styled from 'styled-components'
-
-// Renomeando o objeto para StyledComponents para evitar conflito com o nome 'styled'
-const StyledComponents = {
-  Container: styled.ul`
-    width: 500px;
-    margin: 0 auto 0 8px;
-    display: inline-block;
-    @media (max-width: 768px) {
-      width: auto;
-      margin: 0 auto;
-    }
-  `,
-  Vaga: styled.li`
-    border: 1px solid var(--cor-principal);
-    background-color: var(--cor-secundaria);
-    color: var(--cor-principal);
-    padding: 16px;
-    transition: all ease 0.3s;
-    border-radius: 8px;
-    margin-top: 24px;
-
-    &:hover {
-      background-color: var(--cor-principal);
-      color: var(--cor-secundaria);
-
-      a {
-        border-color: var(--cor-principal);
-        background-color: #9fc131;
-        color: var(--cor-principal);
-      }
-    }
-  `,
-  VagaTitulo: styled.h3`
-    font-weight: bold;
-    margin-bottom: 16px;
-  `,
-  VagaLink: styled.a`
-    border-color: var(--cor-secundaria);
-    background-color: var(--cor-principal);
-    color: var(--cor-secundaria);
-    display: inline-block;
-    padding: 8px 16px;
-    text-decoration: none;
-    margin-top: 16px;
-    font-weight: bold;
-    font-size: 14px;
-    border-radius: 8px;
-    text-align: center;
-
-    @media (max-width: 768px) {
-      display: block;
-    }
-  `
-}
+import { Vagas, VagaLink, VagaTitulo } from './Styles'
 
 type Props = {
   titulo: string
@@ -65,23 +11,19 @@ type Props = {
 }
 
 const Vaga = (props: Props) => (
-  <StyledComponents.Container>
-    <StyledComponents.Vaga>
-      <StyledComponents.VagaTitulo>{props.titulo}</StyledComponents.VagaTitulo>
-      <ul>
-        <li>Localização: {props.localizacao}</li>
-        <li>Senioridade: {props.nivel}</li>
-        <li>Tipo de contratação: {props.modalidade}</li>
-        <li>
-          Salário: {props.salarioMin} - {props.salarioMax}
-        </li>
-        <li>Requisitos: {props.requisitos.join(', ')}</li>
-      </ul>
-      <StyledComponents.VagaLink href="#">
-        Ver detalhes e candidatar-se
-      </StyledComponents.VagaLink>
-    </StyledComponents.Vaga>
-  </StyledComponents.Container>
+  <Vagas>
+    <VagaTitulo>{props.titulo}</VagaTitulo>
+    <ul>
+      <li>Localização: {props.localizacao}</li>
+      <li>Senioridade: {props.nivel}</li>
+      <li>Tipo de contratação: {props.modalidade}</li>
+      <li>
+        Salário: {props.salarioMin} - {props.salarioMax}
+      </li>
+      <li>Requisitos: {props.requisitos.join(', ')}</li>
+    </ul>
+    <VagaLink href="#">Ver detalhes e candidatar-se</VagaLink>
+  </Vagas>
 )
 
 export default Vaga

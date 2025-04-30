@@ -1,17 +1,12 @@
 import React, { useState, FormEvent } from 'react'
-import { StyledForm, BtnPesquisar, Title } from './Styles' // Agora está correto!
+import { StyledForm, BtnPesquisar } from './Styles' // Agora está correto!
 import styled from 'styled-components'
 
 const Input = styled.input`
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px;
-  margin: 0px auto;
-  width: 500px;
+  padding: 0 16px;
+  outline-color: var(--cor-principal);
   @media (max-width: 768px) {
     margin: 0px auto;
-    width: 250px;
   }
 `
 
@@ -29,7 +24,6 @@ const FormVagas = ({ aoPesquisar }: Props) => {
 
   return (
     <StyledForm onSubmit={aoEnviarForm}>
-      <Title>Pesquise sua Tech</Title>
       <Input
         placeholder="Front-end, fullstack, node, design"
         onChange={(e) => setTermo(e.target.value)}

@@ -1,35 +1,28 @@
 import styled from 'styled-components'
 
 export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: var(--cor-secundaria);
+  padding: 32px;
+  border-radius: 12px;
+  margin-top: 40px;
 `
 
 export const BtnPesquisar = styled.button`
   background-color: var(--cor-principal);
-  border: none;
-  padding: 10px 16px;
-  font-size: 16px;
-  color: white;
+  border: 1px solid var(--cor-principal);
+  height: 40px;
+  padding: 0 16px;
+  font-size: 18px;
+  color: var(--cor-secundaria);
+  margin-left: 8px;
   cursor: pointer;
-  border-radius: 4px;
-  margin: 0px auto 24px;
-  width: 500px;
   &:hover {
-    background-color: #9fc131;
+    background-color: var(--cor-secundaria);
     color: var(--cor-principal);
   }
   @media (max-width: 768px) {
     margin: 0px auto;
-    width: auto;
   }
-`
-
-export const Title = styled.text`
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  padding-top: 24px;
 `
